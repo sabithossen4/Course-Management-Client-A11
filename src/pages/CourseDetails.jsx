@@ -17,11 +17,11 @@ const CourseDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const courseRes = await axios.get(`http://localhost:3000/courses/${id}`);
+        const courseRes = await axios.get(`https://assignment-11-server-seven-nu.vercel.app/courses/${id}`);
         setCourse(courseRes.data);        
 
         if (user?.email) {
-          const enrollRes = await axios.get(`http://localhost:3000/enroll/user/${user.email}`);
+          const enrollRes = await axios.get(`https://assignment-11-server-seven-nu.vercel.app/enroll/user/${user.email}`);
           const enrolledCourse = enrollRes.data.find(c => c._id === id);
           if (enrolledCourse) {
             setIsEnrolled(true);
@@ -52,7 +52,7 @@ const CourseDetails = () => {
     try {
       if (!isEnrolled) {
         // Enroll logic
-        await axios.post('http://localhost:3000/enroll', {
+        await axios.post('https://assignment-11-server-seven-nu.vercel.app/enroll', {
           courseId: course._id,
           userEmail: user.email
         });
@@ -67,7 +67,7 @@ const CourseDetails = () => {
         refreshCourse();
       } else {
         // Unenroll logic
-        await axios.delete(`http://localhost:3000/enroll/${enrollmentId}`);
+        await axios.delete(`https://assignment-11-server-seven-nu.vercel.app/enroll/${enrollmentId}`);
 
         Swal.fire({
           icon: 'success',
@@ -84,7 +84,7 @@ const CourseDetails = () => {
   };
 
   const refreshCourse = async () => {
-    const res = await axios.get(`http://localhost:3000/courses/${id}`);
+    const res = await axios.get(`https://assignment-11-server-seven-nu.vercel.app/courses/${id}`);
     setCourse(res.data);
   };  
    if(loading){

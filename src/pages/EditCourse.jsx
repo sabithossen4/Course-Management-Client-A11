@@ -13,7 +13,7 @@ const EditCourse = () => {
 
   // Fetch course by ID
   useEffect(() => {
-    axios.get(`http://localhost:3000/courses/${id}`)
+    axios.get(`https://assignment-11-server-seven-nu.vercel.app/courses/${id}`)
       .then(res => {
         setCourse(res.data);
         setLoading(false)
@@ -47,7 +47,7 @@ const EditCourse = () => {
       enrolledCount: course.enrolledCount, 
     };
 
-    axios.patch(`http://localhost:3000/courses/${id}`, updatedCourse)
+    axios.patch(`https://assignment-11-server-seven-nu.vercel.app/courses/${id}`, updatedCourse)
       .then(res => {
         if (res.data.modifiedCount > 0) {
           Swal.fire({

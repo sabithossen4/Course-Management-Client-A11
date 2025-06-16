@@ -13,7 +13,7 @@ const ManageCourses = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:3000/courses?email=${user.email}`)
+      axios.get(`https://assignment-11-server-seven-nu.vercel.app/courses?email=${user.email}`)
         .then(res => {
           setCourses(res.data)
           setLoading(false)
@@ -33,7 +33,7 @@ const ManageCourses = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/courses/${id}`)
+        axios.delete(`https://assignment-11-server-seven-nu.vercel.app/courses/${id}`)
           .then(res => {
             if (res.data.deletedCount > 0) {
               Swal.fire('Deleted!', 'Your course has been deleted.', 'success');

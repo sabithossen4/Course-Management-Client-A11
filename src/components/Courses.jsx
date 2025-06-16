@@ -9,7 +9,7 @@ const [latestCourses, setLatestCourses] = useState([]);
 const [loading,setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/latest-courses')
+    axios.get('https://assignment-11-server-seven-nu.vercel.app/latest-courses')
       .then(res => {
         setLatestCourses(res.data);
         setLoading(false);

@@ -27,7 +27,7 @@ const AddCourses = () => {
 
         console.log(courseData);
 
-         axios.post('http://localhost:3000/courses', courseData)
+         axios.post('https://assignment-11-server-seven-nu.vercel.app/courses', courseData)
          .then(res =>{         
             if (res.data.insertedId) {
                 Swal.fire({

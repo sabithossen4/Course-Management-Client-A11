@@ -9,7 +9,7 @@ const PopularCourses = () => {
   const [loading,setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/courses')
+    axios.get('https://assignment-11-server-seven-nu.vercel.app/courses')
       .then(res => {    
         const sortedCourses = res.data.sort((a, b) => (b.enrolledCount || 0) - (a.enrolledCount || 0));
         setCourses(sortedCourses.slice(0, 6)); 

@@ -6,18 +6,20 @@ import Loading from './Loading';
 
 
 const MyEnrolledCourses = () => {
-    const { user } = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
   const [enrollments, setEnrollments] = useState([]);
    const [loading,setLoading] = useState(true);
   
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/enroll/user/${user.email}`)
+    if(user){
+      axios.get(`https://assignment-11-server-seven-nu.vercel.app/enroll/user/${user.email}`)
       .then(res => {
         setEnrollments(res.data);
         setLoading(false)
       });
-  }, [user.email]);
+    }
+  }, [user]);
 
   const handleRemove = (id) => {
     Swal.fire({
@@ -28,7 +30,7 @@ const MyEnrolledCourses = () => {
       confirmButtonText: "Yes, remove it!"
     }).then(result => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:3000/enroll/${id}`)
+        axios.delete(`https://assignment-11-server-seven-nu.vercel.app/enroll/${id}`)
           .then(res => {
             if (res.data.deletedCount > 0) {
               Swal.fire("Deleted!", "Enrollment has been removed.", "success");
