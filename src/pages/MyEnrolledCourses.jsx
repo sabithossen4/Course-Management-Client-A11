@@ -3,17 +3,23 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../context/AuthProvider';
 import Loading from './Loading';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 
 const MyEnrolledCourses = () => {
     const {user} = useContext(AuthContext);
   const [enrollments, setEnrollments] = useState([]);
    const [loading,setLoading] = useState(true);
+   const axiosSecure= useAxiosSecure();
   
 
   useEffect(() => {
     if(user){
-      axios.get(`https://assignment-11-server-seven-nu.vercel.app/enroll/user/${user.email}`)
+      axios.get(`https://assignment-11-server-seven-nu.vercel.app/enroll/user/${user.email}`,{
+        headers:{
+          Authorization: `Bearer ${user.accessToken} `
+        }
+      })
       .then(res => {
         setEnrollments(res.data);
         setLoading(false)

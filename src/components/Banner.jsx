@@ -13,8 +13,8 @@ const Banner = () => {
 
         {/* Slide 1 */}
         <SwiperSlide>
-          <Zoom triggerOnce className="h-full bg-cover bg-center bg-[url('/banner-1.avif')]">
-            <div className="p-6 rounded-md text-left text-white pl-24 pt-32  bg-opacity-40 h-full">
+          <Zoom triggerOnce className="h-full bg-cover bg-center bg-[url('/a1.avif')]">
+            <div className="p-6 rounded-md text-left  pl-24 pt-32  bg-opacity-40 h-full">
               <h2 className="text-6xl font-bold mb-3">Master Web Development</h2>
               <p className="mb-4 py-10 text-xl">
                 Learn Fullstack Development with real-world projects.
@@ -33,8 +33,8 @@ const Banner = () => {
 
         {/* Slide 2 */}
         <SwiperSlide>
-          <Zoom triggerOnce className="h-full bg-cover bg-center bg-[url('/banner-2.avif')]">
-            <div className="p-6 rounded-md text-left text-white pl-24 pt-32  bg-opacity-40 h-full">
+          <Zoom triggerOnce className="h-full bg-cover bg-center bg-[url('/a2.avif')]">
+            <div className="p-6 rounded-md text-left pl-24 pt-32  bg-opacity-40 h-full">
               <h2 className="text-6xl font-bold mb-3">Become a Data Scientist</h2>
               <p className="mb-4 py-10 text-xl">
                 Hands-on Machine Learning and Data Analysis courses.
@@ -53,7 +53,7 @@ const Banner = () => {
 
         {/* Slide 3 */}
         <SwiperSlide>
-          <Zoom triggerOnce className="h-full bg-cover bg-center bg-[url('/banner-3.avif')]">
+          <Zoom triggerOnce className="h-full bg-cover bg-center bg-[url('/a3.avif')]">
             <div className="p-6 rounded-md text-left text-white pl-24 pt-32  bg-opacity-40 h-full">
               <h2 className="text-6xl font-bold mb-3">UI/UX Design Bootcamp</h2>
               <p className="mb-4 py-10 text-xl">

@@ -7,7 +7,7 @@ import PopularCourses from '../components/PopularCourses';
 const Home = () => {
   return (
     <div>
-      <title>Home Page</title>
+      <title>Course Hub</title>
       <Banner></Banner>
       <Courses></Courses>
       <PopularCourses></PopularCourses>

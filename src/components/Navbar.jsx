@@ -15,16 +15,16 @@ const Navbar = () => {
   }  
 
   const links = <>
-   <li><NavLink to ="/">Home</NavLink></li>       
+   <li className='font-bold'><NavLink to ="/">Home</NavLink></li>       
    {
     user? 
-     <li><NavLink to ="/managecourses">Courses</NavLink></li>    : ''  }
+     <li className='font-bold'><NavLink to ="/managecourses">Courses</NavLink></li>    : ''  }
    {
     user? 
-     <li><NavLink to ="/addcourses">Add Courses</NavLink></li>     : ''  }
+     <li className='font-bold'><NavLink to ="/addcourses">Add Courses</NavLink></li>     : ''  }
    {
     user? 
-     <li><NavLink to ="/myenrolledcourses">EnrolledCourses</NavLink></li>   : ''  }
+     <li className='font-bold'><NavLink to ="/myenrolledcourses">EnrolledCourses</NavLink></li>   : ''  }
         
    
     
@@ -45,7 +45,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">CourseHub</Link>
+        <Link to="/" className="btn btn-ghost text-xl font-bold">CourseHub</Link>
       </div>
 
       <div className="navbar-center hidden lg:flex">
@@ -70,8 +70,8 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="flex gap-2">
-            <Link to="/register" className="btn btn-secondary btn-sm">Register</Link>
-            <Link to="/login" className="btn btn-sm">Login</Link>
+            <Link to="/register" className="btn font-bold btn-sm">Register</Link>
+            <Link to="/login" className="btn btn-sm font-bold">Login</Link>
           </div>
         )}
       </div>
