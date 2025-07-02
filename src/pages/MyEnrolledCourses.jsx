@@ -13,7 +13,7 @@ const MyEnrolledCourses = () => {
 
   useEffect(() => {
     if(user){
-      axios.get("https://assignment-11-server-seven-nu.vercel.app/enroll/user/user.email")
+      axios.get(`https://assignment-11-server-seven-nu.vercel.app/enroll/user/${user.email}`)
       .then(res => {
         setEnrollments(res.data);
         setLoading(false)
