@@ -9,10 +9,18 @@ const Home = () => {
   return (
     <div>
       <title>Course Hub</title>
-      <Banner></Banner>
-      <Courses></Courses>
-      <PopularCourses></PopularCourses>
-      <Additional></Additional>
+      <div className='max-w-[1600px] mx-auto '>
+        <Banner></Banner>
+      </div>
+      <div className='my-32'>
+        <Courses></Courses>
+      </div>
+      <div>
+        <PopularCourses></PopularCourses>
+      </div>
+      <div>
+        <Additional></Additional>
+      </div>
       
     </div>
   );

@@ -1,25 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../context/AuthProvider';
 import Loading from './Loading';
-import useAxiosSecure from '../hooks/useAxiosSecure';
+import axios from 'axios';
 
 
 const MyEnrolledCourses = () => {
     const {user} = useContext(AuthContext);
   const [enrollments, setEnrollments] = useState([]);
-   const [loading,setLoading] = useState(true);
-   const axiosSecure= useAxiosSecure();
+   const [loading,setLoading] = useState(true);  
   
 
   useEffect(() => {
     if(user){
-      axios.get(`https://assignment-11-server-seven-nu.vercel.app/enroll/user/${user.email}`,{
-        headers:{
-          Authorization: `Bearer ${user.accessToken} `
-        }
-      })
+      axios.get("https://assignment-11-server-seven-nu.vercel.app/enroll/user/user.email")
       .then(res => {
         setEnrollments(res.data);
         setLoading(false)
@@ -52,9 +46,10 @@ const MyEnrolledCourses = () => {
   }
 
   return (
-    <div className="max-w-5xl mx-auto my-10">
+    <div className="max-w-5xl mx-auto my-10 mt-28">
       <title>Enrolled-Course</title>
-      <h2 className="text-3xl font-bold mb-6">My Enrolled Courses</h2>
+      <div className='max-w-11/12 mx-auto'>
+        <h2 className="text-3xl font-bold mb-10 text-center">My Enrolled Courses</h2>
 
       <table className="table w-full">
         <thead>
@@ -78,6 +73,7 @@ const MyEnrolledCourses = () => {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

@@ -27,7 +27,8 @@ const [loading,setLoading] = useState(true);
 
   return (
     <div className="max-w-7xl mx-auto my-12">      
-      <h2 className="text-4xl font-bold mb-10 text-center">Latest Courses</h2>
+     <div className='max-w-11/12 mx-auto'>
+       <h2 className="text-4xl font-bold mb-10 text-center">Latest Courses</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {latestCourses.map(course => (
@@ -48,6 +49,7 @@ const [loading,setLoading] = useState(true);
           </div>
         ))}
       </div>
+     </div>
     </div>
   );
 };

@@ -48,9 +48,10 @@ const ManageCourses = () => {
   }
 
   return (
-    <div className='max-w-6xl mx-auto my-10'>
+    <div className='max-w-7xl mx-auto my-10 mt-28'>
       <title>Manage-Course</title>
-      <h2 className='text-4xl font-bold mb-8 text-center'>Manage Your Courses</h2>
+      <div className='max-w-11/12 mx-auto'>
+        <h2 className='text-4xl font-bold mb-8 text-center'>Manage Your Courses</h2>
 
       <div className="overflow-x-auto">
         <table className="table">
@@ -78,6 +79,7 @@ const ManageCourses = () => {
             ))}
           </tbody>
         </table>
+      </div>
       </div>
 
     </div>

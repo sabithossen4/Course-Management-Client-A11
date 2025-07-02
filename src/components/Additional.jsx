@@ -4,8 +4,10 @@ import UpcomingEvents from './UpcomingEvents';
 
 const Additional = () => {
   return (
-    <div>
-      <Testimonials></Testimonials>
+    <div className='mb-20'>
+      <div className='my-32'>
+        <Testimonials></Testimonials>
+      </div>
       <UpcomingEvents></UpcomingEvents>
     </div>
   );

@@ -52,7 +52,7 @@ const AddCourses = () => {
     };
 
     return (
-        <div className='max-w-3xl mx-auto my-10'>
+        <div className='max-w-3xl mx-auto my-10 mt-28'>
             <title>Add_Courses</title>
             <h2 className='text-4xl font-bold mb-8 text-center'>Add New Course</h2>
 

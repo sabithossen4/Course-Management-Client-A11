@@ -92,8 +92,13 @@ const CourseDetails = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto my-12 p-6 bg-gray-900 shadow-md rounded-lg">
+
+      
+    <div>
+      <h2 className="text-3xl font-bold mb-10 text-center mt-28">My Details Courses</h2>
+    <div className="max-w-4xl mx-auto my-12 p-6 bg-gray-900 shadow-md rounded-lg ">
       <title>Course-Details</title>
+      
       <img src={course.image} alt={course.title} className="w-full h-96 object-cover rounded-md mb-6" />
       <h2 className="text-4xl font-bold mb-4 text-white">{course.title}</h2>
       <p className="mb-4 text-gray-300">{course.shortDescription}</p>
@@ -113,6 +118,7 @@ const CourseDetails = () => {
       ) : (
         <button className="btn btn-disabled">No seats left</button>
       )}
+    </div>
     </div>
   );
 };

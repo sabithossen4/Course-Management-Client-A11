@@ -7,9 +7,14 @@ import Loading from '../pages/Loading';
 const HomeLayout = () => {
   const {state} = useNavigation();
   return (
-    <div className='max-w-11/12 m-auto'>
-      <header><Navbar></Navbar> </header>
-     <main className='min-h-[calc(100vh-425px)]'> {state == "loading" ? <Loading></Loading> : <Outlet></Outlet>   } </main>
+    <div >
+      <div >
+        <header><Navbar></Navbar> </header>
+      </div>
+     <div >
+      <main className='min-h-[calc(100vh-340px)] mt-16'> {state == "loading" ? <Loading></Loading> : <Outlet></Outlet>   } </main>
+     
+     </div>
      <footer><Footer></Footer></footer>
     </div>
   );
