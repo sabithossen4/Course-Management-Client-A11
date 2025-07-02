@@ -28,7 +28,7 @@ const PopularCourses = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {courses.map(course => (
-          <div key={course._id} className="bg-pink-100 card  shadow-xl">
+          <div key={course._id} className="bg-pink-100 text-black card  shadow-xl">
             <figure>
               <img src={course.image} alt={course.title} className="h-56 w-full object-cover" />
             </figure>

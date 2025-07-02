@@ -25,16 +25,11 @@ const Navbar = () => {
    {
     user? 
      <li className='font-bold'><NavLink to ="/myenrolledcourses">EnrolledCourses</NavLink></li>   : ''  }
-        
-   
-    
-          
-         
-      
+     <li className='font-bold'><Link to="/#">About</Link></li>
   </>
   return (
-   <div className=" fixed top-0 z-50 w-full bg-base-100 shadow-sm">
-      <div className='navbar max-w-11/12 mx-auto   '>
+   <div className="fixed top-0 z-50 w-full shadow-sm">
+      <div className='navbar max-w-11/12 mx-auto  bg-base-100  '>
         <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
