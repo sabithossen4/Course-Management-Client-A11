@@ -26,6 +26,7 @@ const Navbar = () => {
     user? 
      <li className='font-bold'><NavLink to ="/myenrolledcourses">EnrolledCourses</NavLink></li>   : ''  }
      <li className='font-bold'><Link to="/#">About</Link></li>
+     <li className='font-bold'><Link to="/#">Contact</Link></li>
   </>
   return (
    <div className="fixed top-0 z-50 w-full shadow-sm">
