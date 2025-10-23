@@ -63,19 +63,19 @@ const HeroSection = () => {
         </div>
         <div className="grid grid-cols-4 text-white font-bold my-16">
           <div>
-            <p className="text-3xl">0+</p>
+            <p className="text-3xl">265+</p>
             <p className="text-sm">Courses Added</p>
           </div>
           <div>
-            <p className="text-3xl">0K</p>
+            <p className="text-3xl">12K</p>
             <p className="text-sm">Manager</p>
           </div>
           <div>
-            <p className="text-3xl">0K</p>
+            <p className="text-3xl">15K</p>
             <p className="text-sm">Users Registered</p>
           </div>
           <div>
-            <p className="text-3xl">0K</p>
+            <p className="text-3xl">23K</p>
             <p className="text-sm">Reviews From Users</p>
           </div>
         </div>

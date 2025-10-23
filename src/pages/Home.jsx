@@ -1,9 +1,9 @@
 import React from 'react';
-import Banner from '../components/Banner';
 import Courses from '../components/Courses';
 import PopularCourses from '../components/PopularCourses';
-import Additional from '../components/Additional';
 import HeroSection from '../components/HeroSection';
+import Categories from '../components/Categories';
+import Testimonials from '../components/Testimonials';
 
 
 const Home = () => {
@@ -13,15 +13,19 @@ const Home = () => {
       <div >
         <HeroSection/>
       </div>      
-      <div className='my-32'>
+      <div >
+        <Categories/>
+      </div>      
+      <div >
         <Courses></Courses>
       </div>
       <div>
         <PopularCourses></PopularCourses>
       </div>
       <div>
-        <Additional></Additional>
+        <Testimonials/>
       </div>
+      
       
     </div>
   );

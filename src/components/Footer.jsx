@@ -1,15 +1,21 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Link } from 'react-router';
+import Container from './Container';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white py-10">
+    <footer className="bg-[#1E88E5] text-white py-10">
+  <Container>
+      
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-4">
         
         {/* Column 1: Logo & slogan */}
-        <div>
-          <h1 className="text-3xl font-bold mb-4">CourseHub</h1>
+        <div>          
+          <div className='flex'>
+            <img className='w-8 h-8' src="/nav-logo.png" alt="" />
+                  <Link to="/" className=" font-bold text-white text-3xl  mb-4">CourseHub</Link>
+          </div>
           <p>Learn. Grow. Succeed. Empower yourself with knowledge every day.</p>
           <div className="flex space-x-4 mt-4">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook size={24} /></a>
@@ -43,10 +49,13 @@ const Footer = () => {
         </div>
 
       </div>
+      <hr className='mt-8' />
 
-      <div className="text-center text-sm text-gray-400 mt-10">
+      <div className="text-center text-sm text-[#C1E2FF] mt-4 font-bold">
         © {new Date().getFullYear()} CourseHub. All Rights Reserved.
       </div>
+  
+  </Container>
     </footer>
   );
 };

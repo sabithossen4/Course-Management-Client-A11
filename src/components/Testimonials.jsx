@@ -1,8 +1,12 @@
+import Container from "./Container";
+
 const Testimonials = () => {
   return (
-    <div className="my-12  max-w-7xl mx-auto">
-      <div className="max-w-11/12 mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8 ">What Our Learners Say</h2>
+    <div className="w-full  py-16 bg-gradient-to-br from-slate-50 via-gray-50 to-gray-200">
+      <Container>
+        <div className="">
+        
+        <h1 className="text-[#202124] text-4xl font-bold pb-10 ">What Our Learners Say</h1>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {/* Testimonial 1 */}
@@ -48,6 +52,7 @@ const Testimonials = () => {
         </div>
       </div>
       </div>
+      </Container>
     </div>
   );
 };

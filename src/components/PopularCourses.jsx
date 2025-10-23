@@ -1,52 +1,144 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { toast } from 'react-toastify';
 import Loading from '../pages/Loading';
+import { FaBookmark, FaUser, FaStar, FaBook } from 'react-icons/fa';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Container from './Container';
+
 
 const PopularCourses = () => {
-  const [courses, setCourses] = useState([]);
-  const [loading,setLoading] = useState(true);
+  const [latestCourses, setLatestCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://assignment-11-server-seven-nu.vercel.app/courses')
-      .then(res => {    
-        const sortedCourses = res.data.sort((a, b) => (b.enrolledCount || 0) - (a.enrolledCount || 0));
-        setCourses(sortedCourses.slice(0, 6)); 
+    axios.get('https://assignment-11-server-seven-nu.vercel.app/latest-courses')
+      .then(res => {
+        setLatestCourses(res.data);
         setLoading(false);
       })
       .catch(error => toast.error("Failed to fetch courses"));
   }, []);
-   if(loading){
-    return <Loading></Loading>
+
+  if (loading) {
+    return <Loading />;
   }
 
   return (
-    <div className="max-w-7xl mx-auto my-12">      
-      <div className=' max-w-11/12 mx-auto'>
-        <h2 className="text-3xl font-bold text-center mb-8">Popular Courses</h2>
+    <div className="w-full bg-gradient-to-b from-gray-50 to-white py-16">
+      <Container>
+        <h1 className="text-[#202124] text-4xl font-bold mb-2">Our Popular Courses</h1>
+        <div className="flex gap-2 mb-4">
+          <button className="bg-[#1E88E5] p-1 px-2 rounded-2xl"></button>
+          <button className="bg-[#1E88E5] p-1 px-4 rounded-2xl"></button>
+        </div>
+        <p className="text-[#3f5264] text-[16px] font-medium mb-12">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
+          Eget aenean accumsan bibendum
+        </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {courses.map(course => (
-          <div key={course._id} className="bg-pink-100 text-black card  shadow-xl">
-            <figure>
-              <img src={course.image} alt={course.title} className="h-56 w-full object-cover" />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{course.title}</h2>
-              <p>{course.shortDescription?.slice(0, 60)}...</p>
-              <p><strong>Enrollments:</strong> {course.enrolledCount || 0}</p>
-              <div className="card-actions justify-end">
-                <Link to={`/coursedetails/${course._id}`} className="btn btn-primary btn-sm">
-                  Details
-                </Link>
+      <div className="w-full">
+                <Swiper
+            loop={true}
+            spaceBetween={24}
+            grabCursor={true}
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+            }}
+          >
+            {latestCourses.map((course, i) => (
+              <SwiperSlide key={i}>
+                <div key={course._id} className=" group bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+            
+            {/* Image Section with Badges */}
+            <div className="relative h-56 overflow-hidden">
+              <img 
+                src={course.image} 
+                alt={course.title} 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />          
+             
+              
+              {/* Bookmark Icon */}
+              <div className="absolute top-4 right-4">
+                <div className="bg-yellow-400 p-2 rounded-md">
+                  <FaBookmark className="text-white" />
+                </div>
+              </div>
+
+             
+
+              {/* Category Badge */}
+              <div className="absolute bottom-4 right-4">
+                <span className="bg-blue-500 text-white px-4 py-1 rounded-md text-sm font-semibold">
+                  {course.category || 'Marketing'}
+                </span>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="p-5">
+
+              {/* Statistics Section */}
+              <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
+              
+
+                <div className="flex items-center gap-2">
+                  <FaStar className="text-amber-500" />
+                  <FaStar className="text-amber-500" />
+                  <FaStar className="text-amber-500" />
+                  <FaStar className="text-amber-500" />
+                 
+                  <span className="font-semibold">{course.rating || 5.0}</span>
+                </div>
+
+               
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-gray-800">
+                {course.title}
+              </h3>
+              <p className="text-gray-600 text-sm mb-4">
+                {course.shortDescription?.slice(0, 80)}...
+              </p>
+
+              
+
+              {/* Divider */}
+              <hr className="my-4" />
+
+              {/* Instructor Section */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <img 
+                    src={course.instructorImage || 'https://i.pravatar.cc/150?img=1'} 
+                    alt={course.instructorName} 
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  <span className="font-semibold text-gray-800">
+                    {course.instructorName || 'James Collins'}
+                  </span>
+                </div>
+
+               
+                 <div  className="lg:inline-block relative text-lg group   py-3 transition-all">
+                                 {/* Price Tag */}
+              <div className="">
+                <span className="text-[#1E88E5] text-3xl font-bold ">
+                  ${course.price || 600}
+                </span>
+              </div></div>
               </div>
             </div>
           </div>
-        ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
       </div>
-      </div>
-
+      </Container>
     </div>
   );
 };
