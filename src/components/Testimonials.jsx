@@ -2,7 +2,7 @@ import Container from "./Container";
 
 const Testimonials = () => {
   return (
-    <div className="w-full  py-16 bg-gradient-to-br from-slate-50 via-gray-50 to-gray-200">
+    <div className="w-full  py-16 bg-gradient-to-br from-slate-50 via-gray-50 to-gray-200 ">
       <Container>
         <div className="">
         
@@ -10,7 +10,7 @@ const Testimonials = () => {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {/* Testimonial 1 */}
-        <div className="bg-white rounded-2xl p-6 shadow-md border transition-transform hover:-translate-y-1 hover:shadow-xl duration-300">
+        <div className="bg-white rounded-2xl p-6 shadow-md  transition-transform hover:-translate-y-1 hover:shadow-xl duration-300">
           <img
             src="https://i.ibb.co/fGCp8ztX/download.jpg"
             className="w-16 h-16 rounded-full mb-4 border-2 border-indigo-500 object-cover"
@@ -24,7 +24,7 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonial 2 */}
-        <div className="bg-white rounded-2xl p-6 shadow-md border transition-transform hover:-translate-y-1 hover:shadow-xl duration-300">
+        <div className="bg-white rounded-2xl p-6 shadow-md  transition-transform hover:-translate-y-1 hover:shadow-xl duration-300">
           <img
             src="https://i.ibb.co/27nqP65y/360-F-969342778-BCPc-WUTy-PG7-Rs-XUUPa-J2j-DNii-Czrty-Od.jpg"
             className="w-16 h-16 rounded-full mb-4 border-2 border-indigo-500 object-cover"
@@ -38,7 +38,7 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonial 3 */}
-        <div className="bg-white rounded-2xl p-6 shadow-md border transition-transform hover:-translate-y-1 hover:shadow-xl duration-300">
+        <div className="bg-white rounded-2xl p-6 shadow-md transition-transform hover:-translate-y-1 hover:shadow-xl duration-300">
           <img
             src="https://i.ibb.co/4W2DGKm/testimonial3.jpg"
             className="w-16 h-16 rounded-full mb-4 border-2 border-indigo-500 object-cover"

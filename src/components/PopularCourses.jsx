@@ -35,8 +35,7 @@ const PopularCourses = () => {
           <button className="bg-[#1E88E5] p-1 px-4 rounded-2xl"></button>
         </div>
         <p className="text-[#3f5264] text-[16px] font-medium mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
-          Eget aenean accumsan bibendum
+          Stay updated with our newest and most popular courses
         </p>
 
       <div className="w-full">

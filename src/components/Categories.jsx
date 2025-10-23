@@ -55,8 +55,7 @@ const Categories = () => {
           <button className="bg-[#1E88E5] p-1 px-4 rounded-2xl"></button>
         </div>
         <p className="text-[#3f5264] text-[16px] font-medium mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
-          Eget aenean accumsan bibendum
+          Organize and Explore Courses by Category
         </p>
 
         <div className="w-full">

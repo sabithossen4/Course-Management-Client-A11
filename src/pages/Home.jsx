@@ -4,6 +4,8 @@ import PopularCourses from '../components/PopularCourses';
 import HeroSection from '../components/HeroSection';
 import Categories from '../components/Categories';
 import Testimonials from '../components/Testimonials';
+import FAQPage from '../components/FAQPage';
+import About from '../components/About';
 
 
 const Home = () => {
@@ -20,10 +22,16 @@ const Home = () => {
         <Courses></Courses>
       </div>
       <div>
+        <About/>
+      </div>
+      <div>
         <PopularCourses></PopularCourses>
       </div>
       <div>
         <Testimonials/>
+      </div>
+      <div>
+        <FAQPage/>
       </div>
       
       
