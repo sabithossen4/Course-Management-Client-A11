@@ -17,7 +17,7 @@ export default function About() {
   ];
 
   return (
-    <div id='about' className=" bg-white py-16 px-4">
+    <div  className=" bg-white py-16 px-4">
       <Container>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           

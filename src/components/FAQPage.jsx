@@ -6,27 +6,33 @@ export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
-    {
-      question: "What's DreamLMS want to give you?",
-      answer: "DreamLMS aims to provide you with comprehensive, high-quality educational resources that empower you to achieve your learning goals. We offer interactive courses, expert instructors, and a supportive community to ensure your success."
-    },
-    {
-      question: "Why choose us for your education?",
-      answer: "We stand out with our experienced instructors, flexible learning schedules, affordable pricing, and proven track record of student success. Our platform is designed with your learning journey in mind, offering personalized support every step of the way."
-    },
-    {
-      question: "How We Provide Service For you?",
-      answer: "We provide 24/7 access to course materials, live instructor support, interactive learning tools, progress tracking, and certification upon completion. Our dedicated support team is always ready to assist you with any questions or technical issues."
-    },
-    {
-      question: "Do you have a monthly plan?",
-      answer: "Yes! We offer flexible monthly subscription plans that give you full access to our course library. You can cancel anytime, and we also provide discounted annual plans for those who want to commit long-term to their learning journey."
-    },
-    {
-      question: "Are you Affordable For Your Course",
-      answer: "Absolutely! We believe quality education should be accessible to everyone. Our pricing is competitive and we offer various payment plans, student discounts, and financial aid options to ensure affordability for all learners."
-    }
-  ];
+  {
+    question: "What does our Course Management System offer?",
+    answer:
+      "Our Course Management System provides a complete solution for organizing, delivering, and tracking online courses. It helps instructors manage students, assignments, and grades efficiently, while learners can easily access materials and monitor their progress."
+  },
+  {
+    question: "Why choose our Course Management System?",
+    answer:
+      "We offer a user-friendly interface, real-time progress tracking, automated grading, and secure data management. Our system is designed to make teaching and learning seamless for both educators and students."
+  },
+  {
+    question: "How do we deliver our services?",
+    answer:
+      "We provide 24/7 access to the platform, allowing instructors to upload materials, create quizzes, and communicate with students anytime. Students can enroll, access lessons, submit assignments, and receive instant feedback easily."
+  },
+  {
+    question: "Do you offer subscription or one-time payment plans?",
+    answer:
+      "Yes! We offer both flexible monthly subscription and one-time payment options based on your institution’s needs. You can upgrade, cancel, or renew your plan anytime with no hidden fees."
+  },
+  {
+    question: "Is our Course Management System affordable?",
+    answer:
+      "Absolutely! Our pricing is designed to fit educational institutions of all sizes. We offer student-friendly plans, institutional discounts, and custom packages to ensure affordability without compromising quality."
+  }
+];
+
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -45,7 +51,7 @@ export default function FAQPage() {
               {/* Image placeholder - you can replace with actual image */}
               <div className="relative">
                 <div className="flex justify-center items-center space-x-4">
-                  <img src="/about-1-1.jpg" alt="" />
+                  <img className='w-[490px] h-[590px]' src="/about-1-1.jpg" alt="" />
                 </div>
                 
               </div>

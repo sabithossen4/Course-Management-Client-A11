@@ -1,25 +1,25 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router';
-import { toast } from 'react-toastify';
-import Loading from '../pages/Loading';
-import { FaBookmark, FaUser, FaStar, FaBook } from 'react-icons/fa';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
+import { toast } from "react-toastify";
+import Loading from "../pages/Loading";
+import { FaBookmark, FaUser, FaStar, FaBook } from "react-icons/fa";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Container from './Container';
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import Container from "./Container";
 
 const PopularCourses = () => {
   const [latestCourses, setLatestCourses] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://assignment-11-server-seven-nu.vercel.app/latest-courses')
-      .then(res => {
+    axios
+      .get("https://assignment-11-server-seven-nu.vercel.app/latest-courses")
+      .then((res) => {
         setLatestCourses(res.data);
         setLoading(false);
       })
-      .catch(error => toast.error("Failed to fetch courses"));
+      .catch((error) => toast.error("Failed to fetch courses"));
   }, []);
 
   if (loading) {
@@ -29,7 +29,9 @@ const PopularCourses = () => {
   return (
     <div className="w-full bg-gradient-to-b from-gray-50 to-white py-16">
       <Container>
-        <h1 className="text-[#202124] text-4xl font-bold mb-2">Our Popular Courses</h1>
+        <h1 className="text-[#202124] text-4xl font-bold mb-2">
+          Our Popular Courses
+        </h1>
         <div className="flex gap-2 mb-4">
           <button className="bg-[#1E88E5] p-1 px-2 rounded-2xl"></button>
           <button className="bg-[#1E88E5] p-1 px-4 rounded-2xl"></button>
@@ -38,8 +40,8 @@ const PopularCourses = () => {
           Stay updated with our newest and most popular courses
         </p>
 
-      <div className="w-full">
-                <Swiper
+        <div className="w-full">
+          <Swiper
             loop={true}
             spaceBetween={24}
             grabCursor={true}
@@ -51,92 +53,86 @@ const PopularCourses = () => {
           >
             {latestCourses.map((course, i) => (
               <SwiperSlide key={i}>
-                <div key={course._id} className=" group bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
-            
-            {/* Image Section with Badges */}
-            <div className="relative h-56 overflow-hidden">
-              <img 
-                src={course.image} 
-                alt={course.title} 
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />          
-             
-              
-              {/* Bookmark Icon */}
-              <div className="absolute top-4 right-4">
-                <div className="bg-yellow-400 p-2 rounded-md">
-                  <FaBookmark className="text-white" />
+                <div
+                  key={course._id}
+                  className=" group bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow"
+                >
+                  {/* Image Section with Badges */}
+                  <div className="relative h-56 overflow-hidden">
+                    <img
+                      src={course.image}
+                      alt={course.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+
+                    {/* Bookmark Icon */}
+                    <div className="absolute top-4 right-4">
+                      <div className="bg-yellow-400 p-2 rounded-md">
+                        <FaBookmark className="text-white" />
+                      </div>
+                    </div>
+
+                    {/* Category Badge */}
+                    <div className="absolute bottom-4 right-4">
+                      <span className="bg-blue-500 text-white px-4 py-1 rounded-md text-sm font-semibold">
+                        {course.category || "Marketing"}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="p-5">
+                    {/* Statistics Section */}
+                    <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
+                      <div className="flex items-center gap-2">
+                        <FaStar className="text-amber-500" />
+                        <FaStar className="text-amber-500" />
+                        <FaStar className="text-amber-500" />
+                        <FaStar className="text-amber-500" />
+
+                        <span className="font-semibold">
+                          {course.rating || 5.0}
+                        </span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-gray-800">
+                      {course.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4">
+                      {course.shortDescription?.slice(0, 80)}...
+                    </p>
+
+                    {/* Instructor Section */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={
+                            course.instructorImage ||
+                            "https://i.pravatar.cc/150?img=1"
+                          }
+                          alt={course.instructorName}
+                          className="w-10 h-10 rounded-full object-cover"
+                        />
+                        <span className="font-semibold text-gray-800">
+                          {course.instructorName || "James Collins"}
+                        </span>
+                      </div>
+
+                      <div className="lg:inline-block relative text-lg group   py-3 transition-all">
+                        {/* Price Tag */}
+                        <div className="">
+                          <span className="text-[#1E88E5] text-3xl font-bold ">
+                            ${course.price || 600}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-             
-
-              {/* Category Badge */}
-              <div className="absolute bottom-4 right-4">
-                <span className="bg-blue-500 text-white px-4 py-1 rounded-md text-sm font-semibold">
-                  {course.category || 'Marketing'}
-                </span>
-              </div>
-            </div>
-
-            {/* Content Section */}
-            <div className="p-5">
-
-              {/* Statistics Section */}
-              <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
-              
-
-                <div className="flex items-center gap-2">
-                  <FaStar className="text-amber-500" />
-                  <FaStar className="text-amber-500" />
-                  <FaStar className="text-amber-500" />
-                  <FaStar className="text-amber-500" />
-                 
-                  <span className="font-semibold">{course.rating || 5.0}</span>
-                </div>
-
-               
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-800">
-                {course.title}
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {course.shortDescription?.slice(0, 80)}...
-              </p>
-
-              
-
-              {/* Divider */}
-              <hr className="my-4" />
-
-              {/* Instructor Section */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img 
-                    src={course.instructorImage || 'https://i.pravatar.cc/150?img=1'} 
-                    alt={course.instructorName} 
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
-                  <span className="font-semibold text-gray-800">
-                    {course.instructorName || 'James Collins'}
-                  </span>
-                </div>
-
-               
-                 <div  className="lg:inline-block relative text-lg group   py-3 transition-all">
-                                 {/* Price Tag */}
-              <div className="">
-                <span className="text-[#1E88E5] text-3xl font-bold ">
-                  ${course.price || 600}
-                </span>
-              </div></div>
-              </div>
-            </div>
-          </div>
               </SwiperSlide>
             ))}
           </Swiper>
-      </div>
+        </div>
       </Container>
     </div>
   );
