@@ -13,7 +13,7 @@ const HomeLayout = () => {
         <Navbar></Navbar>
       </header>
       
-        <main className="min-h-[calc(100vh-340px)] mt-16">
+        <main className="min-h-[calc(100vh-340px)] mt-16 ">
           {state == "loading" ? <Loading></Loading> : <Outlet></Outlet>}
         </main>      
 

@@ -10,6 +10,7 @@ import ManageCourses from "../pages/ManageCourses";
 import EditCourse from "../pages/EditCourse";
 import MyEnrolledCourses from "../pages/MyEnrolledCourses";
 import CourseDetails from "../pages/CourseDetails";
+import AuthProvider from "../context/AuthProvider";
 
 export const router = createBrowserRouter([
   {
@@ -47,7 +48,9 @@ export const router = createBrowserRouter([
       },      
       {
         path: "/myenrolledcourses",
-        Component: MyEnrolledCourses,
+        element: <AuthProvider>
+          <MyEnrolledCourses/>
+        </AuthProvider>,
       },                
     ],
   },

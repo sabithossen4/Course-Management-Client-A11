@@ -5,7 +5,7 @@ import Container from './Container';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1E88E5] text-white py-10 bg-gradient-to-r from-[#1E88E5] via-[#135187] to-[#0f4370]">
+    <footer className="bg-[#1E88E5] text-white py-10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
   <Container>
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-4">
